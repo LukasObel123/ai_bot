@@ -1,7 +1,7 @@
 from functions.get_files_info import get_files_info
 from functions.get_file_content import get_file_content
 from functions.write_file import write_file
-
+from functions.run_python_file import run_python_file
 
 ##Tests for get_files_info.py##
 """
@@ -26,8 +26,9 @@ print(f"{t1}")
 print(f"{t2}")
 print(f"{t3}")
 print(f"{t4}")
-"""
 
+
+##Tests for write_file,py
 t1 = write_file("calculator", "lorem.txt", "wait, this isn't lorem ipsum")
 t2 = write_file("calculator", "pkg/morelorem.txt", "lorem ipsum dolor sit amet")
 t3 = write_file("calculator", "/tmp/temp.txt", "this should not be allowed")
@@ -35,4 +36,19 @@ t3 = write_file("calculator", "/tmp/temp.txt", "this should not be allowed")
 print(f"{t1}")
 print(f"{t2}")
 print(f"{t3}")
+"""
+
+##Tests to check run_python_file.py
+t1 = run_python_file("calculator", "main.py")
+t2 = run_python_file("calculator", "main.py", ["3 + 5"])
+t3 = run_python_file("calculator", "tests.py")
+t4 = run_python_file("calculator", "../main.py")
+t5 = run_python_file("calculator", "nonexistent.py")
+
+print(f"{t1}")
+print(f"{t2}")
+print(f"{t3}")
+print(f"{t4}")
+print(f"{t5}")
+
 
